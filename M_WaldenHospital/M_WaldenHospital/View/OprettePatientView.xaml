@@ -1,0 +1,144 @@
+﻿<Page
+    x:Class="M_WaldenHospital.View.OprettePatientView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:M_WaldenHospital.View"
+    xmlns:mv="using:M_WaldenHospital.ViewModel"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" Width="1866.827" Height="763.073">
+    <Page.DataContext>
+        <mv:OprettePatientViewModel/>
+    </Page.DataContext>
+
+    
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid Margin="31,0,122,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="643*"/>
+                <ColumnDefinition Width="482*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="332*"/>
+                <RowDefinition Height="385*"/>
+            </Grid.RowDefinitions>
+
+            <StackPanel Margin="100,10,9.6,113"  >
+                <StackPanel Height="42" Margin="0,0,0,0">
+                    <TextBlock x:Name="tbx" TextWrapping="Wrap" FontSize="22" Text="Check Insurance Plan" Height="40" Margin="0,0,0.4,0"/>
+                </StackPanel>
+                <StackPanel Height="30" Orientation="Horizontal" Margin="0,20,84.8,0">
+                    <TextBlock x:Name="textBlock" TextWrapping="Wrap"  Text="CPR"  Width="77" Margin="0,0,0,0"/>
+                    <TextBox x:Name="textBox" Text="{Binding SSN , Mode=TwoWay}"  Width="129"  />
+                </StackPanel>
+                <StackPanel Height="30" Orientation="Horizontal" Margin="0,0,84.8,0">
+                    <TextBlock x:Name="textBlock1" TextWrapping="Wrap" Padding="1,0,0,0" Text="Provider"  Width="77"/>
+                    <TextBox x:Name="textBox1" Text="{Binding Provider, Mode=TwoWay}"  TextWrapping="Wrap"   Width="129"/>
+                </StackPanel>
+               
+                <StackPanel Height="37" Orientation="Horizontal" Margin="0,0,84.8,0">
+                    <TextBlock x:Name="textBlock01" TextWrapping="Wrap" Padding="1,0,0,0" Text="ValidUntil"  Width="77"/>
+                    <TextBox x:Name="textBox01" Text="{Binding  ValidUntil, Mode=TwoWay}"  TextWrapping="Wrap"   Width="129"/>
+                </StackPanel>
+                <Button x:Name="button2" Command="{Binding CheckInsurancePatientCommand}" Content="Check Insurance" 
+                  VerticalAlignment="Stretch" Width="146"  RenderTransformOrigin="1.617,5.265" Margin="201,0,0,0" Height="44"/>
+            </StackPanel>
+            <StackPanel Margin="100,204,40.6,335.8" Grid.RowSpan="2">
+                <StackPanel Height="44" Margin="-49,0,0.2,0">
+                    <TextBlock x:Name="tb"  Text="Create Patient"  FontSize="22" Height="39" Margin="-46,0,483.2,0" />
+                </StackPanel>
+                <StackPanel Height="40" Orientation="Horizontal" Margin="0,3,84.8,0">
+                    <TextBlock x:Name="textBlock3" TextWrapping="Wrap"  Text="PName"  Width="77" Margin="0,0,0,0"/>
+                    <TextBox x:Name="textBox3" Text="{Binding PName, Mode=TwoWay}"  Width="129" Margin="0,0,0,0"  />
+                </StackPanel>
+                <StackPanel Height="40" Orientation="Horizontal" Margin="0,0,84.8,0">
+                    <TextBlock x:Name="textBlock2" TextWrapping="Wrap" Padding="1,0,0,0" Text="PAddress"  Width="77"/>
+                    <TextBox x:Name="textBox2" Text="{Binding PAddress, Mode=TwoWay}"  TextWrapping="Wrap"   Width="129"/>
+                </StackPanel>
+
+                <StackPanel Height="40" Orientation="Horizontal" Margin="0,0,84.8,0">
+                    <TextBlock x:Name="textBlock112" TextWrapping="Wrap" Padding="1,0,0,0" Text="Age"  Width="77"/>
+                    <TextBox x:Name="textBox112" Text="{Binding AGE, Mode=TwoWay}"  TextWrapping="Wrap"   Width="129"/>
+                </StackPanel>
+
+            </StackPanel>
+
+            <StackPanel   Margin="448,50,153.2,180.8" Grid.Row="1"  Grid.ColumnSpan="2">
+                <StackPanel Height="39" Margin="90,0,0,15">
+                    <TextBlock x:Name="tbx2" TextWrapping="Wrap" Text="Hospital Card" Height="37" FontSize="22" Padding="0,0,1,10"   Margin="-38,0,0.4,0"/>
+                </StackPanel>
+                <StackPanel Height="40" Orientation="Horizontal" Margin="1,0,0,0" HorizontalAlignment="Left" Width="267">
+                    <TextBlock x:Name="textBlock22" TextWrapping="Wrap" Text="CId" Height="28" Margin="0,0,0,10" Width="97"/>
+                    <TextBox x:Name="textBox22" Text="{Binding CID, Mode=TwoWay}" Width="168" RenderTransformOrigin="0.71,0.52"  />
+                </StackPanel>
+                <StackPanel  Orientation="Horizontal" Height="40" RenderTransformOrigin="0.5,0.5" Margin="1,0,0,0" >
+                    <TextBlock x:Name="textBlock33"  Text="ValidUntil" VerticalAlignment="Top" Width="97"/>
+                    <TextBox x:Name="textBox33" Text="{Binding VALID, Mode=TwoWay}"  TextWrapping="Wrap" Width="169" Height="48" VerticalAlignment="Top" Margin="0,0,0,-8"  />
+
+                </StackPanel>
+
+
+
+            </StackPanel>
+
+            <StackPanel   Margin="100,50,114.6,42.8" Grid.Row="1" >
+                <StackPanel Height="39" Margin="90,0,0,15">
+                    <TextBlock x:Name="tbx22" TextWrapping="Wrap" Text="Relative" Height="37" FontSize="22" Padding="0,0,1,10"   Margin="10,0,0,0"/>
+                </StackPanel>
+                <StackPanel Height="40" Orientation="Horizontal" Margin="1,0,0,0" HorizontalAlignment="Left" Width="267">
+                    <TextBlock x:Name="textBlock122" TextWrapping="Wrap" Text="RName" Height="28" Margin="0,0,0,10" Width="97"/>
+                    <TextBox x:Name="textBox222" Text="{Binding RName, Mode=TwoWay}" Width="155"  />
+                </StackPanel>
+                <StackPanel  Orientation="Horizontal" Height="40" RenderTransformOrigin="0.5,0.5" Margin="1,0,0.2,0" >
+                    <TextBlock x:Name="textBlock3333"  Text="RTlf" VerticalAlignment="Top" Width="97"/>
+                    <TextBox x:Name="textBox3333" Text="{Binding RTlf, Mode=TwoWay}"  TextWrapping="Wrap" Width="155" Height="48" VerticalAlignment="Top"  />
+
+                </StackPanel>
+
+                <StackPanel  Orientation="Horizontal" Height="40" RenderTransformOrigin="0.5,0.5" Margin="1,0,0.2,4" >
+                    <TextBlock x:Name="textBlock133"  Text="Relatiosnhip" VerticalAlignment="Top" Width="97"/>
+                    <TextBox x:Name="textBox133" Text="{Binding Relationship, Mode=TwoWay}"  TextWrapping="Wrap" Width="155" Margin="0,0,0,0.2"  />
+
+                </StackPanel>
+                <Button x:Name="button22" Command="{Binding AddPatientCommand}" Content="New Patient" 
+                  VerticalAlignment="Stretch" Width="168"  RenderTransformOrigin="1.617,5.265" Margin="251,0,-135.8,0" Height="46"/>
+
+            </StackPanel>
+
+
+            <StackPanel HorizontalAlignment="Left" Width="396" Grid.Column="1" Margin="10.4,30,-32.8,9.8" Grid.RowSpan="2">
+                <TextBlock x:Name="textBlock222" TextWrapping="Wrap" Text="List of Patients"/>
+                <ListView x:Name="listView" Height="175" ItemsSource="{Binding LIST}" Margin="9,0,33,0">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel   Orientation="Vertical"  Margin="0,5,5,5">
+                                <StackPanel  Orientation="Horizontal" >
+                                    <TextBlock  Margin="5,0,0,0"  Text="CPR" Width="80"></TextBlock>
+                                    <TextBox  Text="{Binding   SSN}" Width="175" ></TextBox>
+                                </StackPanel>
+                                <StackPanel   Orientation="Horizontal" >
+                                    <TextBlock  Margin="5,0,0,0"  Text="Name" Width="80"></TextBlock>
+                                    <TextBox  Text="{Binding   PName}" Width="175" ></TextBox>
+                                </StackPanel>
+                                <StackPanel   Orientation="Horizontal" >
+                                    <TextBlock  Margin="5,0,0,0"  Text="Address" Width="80"></TextBlock>
+                                    <TextBox  Text="{Binding   PAddress}" Width="175" ></TextBox>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Margin="5,0,0,0" Text="RName" Width="80"></TextBlock>
+                                    <TextBox  Text="{Binding  Path=Rel.RName}" Width="176" ></TextBox>
+                                </StackPanel>
+
+                                <StackPanel   Orientation="Horizontal" >
+                                    <TextBlock  Margin="5,0,0,0"  Text="Relationship" Width="80"></TextBlock>
+                                    <TextBox  Text="{Binding  Path=Rel.Relationship}" Width="175" ></TextBox>
+                                </StackPanel>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackPanel>
+        </Grid>
+
+    </Grid>
+</Page>
