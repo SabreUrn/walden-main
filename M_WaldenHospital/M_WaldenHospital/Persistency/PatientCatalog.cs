@@ -11,8 +11,13 @@ namespace M_WaldenHospital.Persistency
      {
 
          private List<Patient> _pc;
-         private RelativeCatalog _relativeCatalog;
-         private HospitalCardCatalog _hospitalCardCatalog;
+        private RelativeCatalog _relativeCatalog;
+        private HospitalCardCatalog _hospitalCardCatalog;
+        private Patient _patient;
+
+
+
+
 
 
 
@@ -20,9 +25,21 @@ namespace M_WaldenHospital.Persistency
         public PatientCatalog()
         {
            _pc = new List<Patient>();
-           _relativeCatalog = new RelativeCatalog();
-           _hospitalCardCatalog = new HospitalCardCatalog();
+            _relativeCatalog = new RelativeCatalog();
+            _hospitalCardCatalog = new HospitalCardCatalog();
+
+
 
         }
+
+       
+
+        public void CreatePatient(int ssn, string pName, string pAdress, int pAge)
+        {
+           _patient = new Patient(ssn, pName, pAdress, pAge );
+           _pc.Add(_patient);
+        }
+
+      
     }
 }

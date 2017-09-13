@@ -73,6 +73,7 @@ namespace M_WaldenHospital.ViewModel
            InsurancePlan  myIP = _ips.getMember(SSN);
            Provider = myIP.Provider;
            ValidUntil = myIP.Validtil;
+           _patientCatalog.CreatePatient(24, "jim", "oslo", 100);
 
        }
 

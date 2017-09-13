@@ -11,5 +11,13 @@ namespace M_WaldenHospital.Model
         public string RName { get; set; }
         public string RTlf { get; set; }
         public string Relationship { get; set;}
+
+
+        public Relative(string rName, string rTlf, string relationship)
+        {
+            RName = rName;
+            RTlf = rTlf;
+            Relationship = relationship;    
+        }
     }
 }

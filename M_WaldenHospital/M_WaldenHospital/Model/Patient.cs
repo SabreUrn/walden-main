@@ -12,6 +12,14 @@ namespace M_WaldenHospital.Model
         public string PName { get; set; }
         public string PAddress { get; set; }
         public int PAge { get; set; }
-        
+
+
+        public Patient(int ssn, string pName, string pAddress, int pAge)
+        {
+            SSN = ssn;
+            PName = pName;
+            PAddress = pAddress;
+            PAge = pAge;    
+        }
     }
 }
