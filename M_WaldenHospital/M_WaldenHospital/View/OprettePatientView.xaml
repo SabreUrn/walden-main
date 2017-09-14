@@ -58,7 +58,7 @@
 
                 <StackPanel Height="40" Orientation="Horizontal" Margin="0,0,84.8,0">
                     <TextBlock x:Name="textBlock112" TextWrapping="Wrap" Padding="1,0,0,0" Text="Age"  Width="77"/>
-                    <TextBox x:Name="textBox112" Text="{Binding AGE, Mode=TwoWay}"  TextWrapping="Wrap"   Width="129"/>
+                    <TextBox x:Name="textBox112" Text="{Binding PAge, Mode=TwoWay}"  TextWrapping="Wrap"   Width="129"/>
                 </StackPanel>
 
             </StackPanel>
@@ -73,7 +73,7 @@
                 </StackPanel>
                 <StackPanel  Orientation="Horizontal" Height="40" RenderTransformOrigin="0.5,0.5" Margin="1,0,0,0" >
                     <TextBlock x:Name="textBlock33"  Text="ValidUntil" VerticalAlignment="Top" Width="97"/>
-                    <TextBox x:Name="textBox33" Text="{Binding VALID, Mode=TwoWay}"  TextWrapping="Wrap" Width="169" Height="48" VerticalAlignment="Top" Margin="0,0,0,-8"  />
+                    <TextBox x:Name="textBox33" Text="{Binding ValidTo, Mode=TwoWay}"  TextWrapping="Wrap" Width="169" Height="48" VerticalAlignment="Top" Margin="0,0,0,-8"  />
 
                 </StackPanel>
 

@@ -30,7 +30,7 @@ namespace M_WaldenHospital.Persistency
         {
             _relative = new Relative(rName, rTlf, relationship);
             _rc.Add(_relative);
-            return _relative; //TODO: Throw _relative back to PatientCatalog
+            return _relative;
         }
     }
 }

@@ -16,7 +16,10 @@ namespace M_WaldenHospital.Persistency
         private Patient _patient;
 
 
-         
+        public List<Patient> Pc {
+            get { return _pc; }
+        }
+
 
 
 
