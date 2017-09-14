@@ -9,14 +9,14 @@ namespace M_WaldenHospital.Model
 {
   public  class HospitalCard
     {
-        public int CId { get; set; }
-        public int ValidTO { get; set; }
+        public int CID { get; set; }
+        public int ValidTo { get; set; }
 
 
         public HospitalCard(int cId, int validTo)
         {
-            CId = cId;
-            ValidTO = validTo;  
+            CID = cId;
+            ValidTo = validTo;  
         }
     }
 }

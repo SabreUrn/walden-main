@@ -26,10 +26,12 @@ namespace M_WaldenHospital.Persistency
 
         }
 
-        public void CreateCard(int cID , int validTo)
+        public HospitalCard CreateCard(int cID , int validTo)
         {
             _hospitalCard = new HospitalCard(cID, validTo);
             _hc.Add(_hospitalCard);
+            //TODO: Return _hospitalCard
+            return _hospitalCard;
         }
 
 

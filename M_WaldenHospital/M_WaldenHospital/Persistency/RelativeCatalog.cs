@@ -26,13 +26,11 @@ namespace M_WaldenHospital.Persistency
         }
 
 
-        public void CreateRelativ(string rName, string rTlf, string relationship)
+        public Relative CreateRelativ(string rName, string rTlf, string relationship)
         {
-              // Usikker hvad som skal she her??
-
             _relative = new Relative(rName, rTlf, relationship);
             _rc.Add(_relative);
-
+            return _relative; //TODO: Throw _relative back to PatientCatalog
         }
     }
 }

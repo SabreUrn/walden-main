@@ -10,7 +10,7 @@ namespace M_WaldenHospital.Persistency
      public class PatientCatalog
      {
 
-         private List<Patient> _pc;
+        private List<Patient> _pc;
         private RelativeCatalog _relativeCatalog;
         private HospitalCardCatalog _hospitalCardCatalog;
         private Patient _patient;
@@ -37,8 +37,15 @@ namespace M_WaldenHospital.Persistency
 
         public void CreatePatient(int ssn, string pName, string pAdress, int pAge, string rName, string rTlf, string relationship, int cID, int validTo)
         {
-           _patient = new Patient(ssn, pName, pAdress, pAge );
-           _pc.Add(_patient);
+            HospitalCard pHospitalCard = _hospitalCardCatalog.CreateCard(cID, validTo); //New hospital card gets created by calling CreateCard,
+                                                                                        //which also runs all the other code in that method.
+
+            Relative pRelative = null;                                                  //New relative variable pointing at nothing gets created.
+            if(pAge < 18) {                                                             //IF patient is under 18 (business logic),
+                pRelative = _relativeCatalog.CreateRelativ(rName, rTlf, relationship);  //the var is relevant and gets assigned information through
+            }                                                                           //the CreateRelativ method in the _relativeCatalog
+            _patient = new Patient(ssn, pName, pAdress, pAge, pRelative, pHospitalCard);//New patient gets created using parameters and new instances
+           _pc.Add(_patient); //Patient gets added to catalog
         }
 
       

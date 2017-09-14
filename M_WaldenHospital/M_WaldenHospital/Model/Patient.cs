@@ -12,14 +12,18 @@ namespace M_WaldenHospital.Model
         public string PName { get; set; }
         public string PAddress { get; set; }
         public int PAge { get; set; }
+        public Relative PRelative { get; set; }
+        public HospitalCard PHospitalCard { get; set; }
 
 
-        public Patient(int ssn, string pName, string pAddress, int pAge)
+        public Patient(int ssn, string pName, string pAddress, int pAge, Relative pRelative, HospitalCard pHospitalCard)
         {
             SSN = ssn;
             PName = pName;
             PAddress = pAddress;
-            PAge = pAge;    
+            PAge = pAge;
+            PRelative = pRelative;
+            PHospitalCard = pHospitalCard;
         }
     }
 }
