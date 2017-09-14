@@ -16,8 +16,7 @@ namespace M_WaldenHospital.Persistency
         private Patient _patient;
 
 
-
-
+         
 
 
 
@@ -32,9 +31,11 @@ namespace M_WaldenHospital.Persistency
 
         }
 
+      
+
        
 
-        public void CreatePatient(int ssn, string pName, string pAdress, int pAge)
+        public void CreatePatient(int ssn, string pName, string pAdress, int pAge, string rName, string rTlf, string relationship, int cID, int validTo)
         {
            _patient = new Patient(ssn, pName, pAdress, pAge );
            _pc.Add(_patient);
