@@ -126,12 +126,12 @@
                                 </StackPanel>
                                 <StackPanel Orientation="Horizontal">
                                     <TextBlock Margin="5,0,0,0" Text="RName" Width="80"></TextBlock>
-                                    <TextBox  Text="{Binding  Path=Rel.RName}" Width="176" ></TextBox>
+                                    <TextBox  Text="{Binding  Path=PRelative.RName}" Width="176" ></TextBox>
                                 </StackPanel>
 
                                 <StackPanel   Orientation="Horizontal" >
                                     <TextBlock  Margin="5,0,0,0"  Text="Relationship" Width="80"></TextBlock>
-                                    <TextBox  Text="{Binding  Path=Rel.Relationship}" Width="175" ></TextBox>
+                                    <TextBox  Text="{Binding  Path=PRelative.Relationship}" Width="175" ></TextBox>
                                 </StackPanel>
                             </StackPanel>
                         </DataTemplate>

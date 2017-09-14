@@ -12,6 +12,7 @@ using PatientClass = M_WaldenHospital.Model.Patient;
 namespace M_WaldenHospital.ViewModel {
     public class OprettePatientViewModel : ViewModelBase {
 
+        #region Instance fields
         private InsurancePlanSystem _ips;
         private PatientCatalog _patientCatalog;
         private int _ssn;
@@ -29,7 +30,10 @@ namespace M_WaldenHospital.ViewModel {
 
         private RelayCommand _checkInsurancePatientCommand;
         private RelayCommand _addPatientCommand;
+        #endregion
 
+
+        #region Properties
         public RelayCommand CheckInsurancePatientCommand {
             get { return _checkInsurancePatientCommand; }
             set { _checkInsurancePatientCommand = value; }
@@ -39,7 +43,6 @@ namespace M_WaldenHospital.ViewModel {
             get { return _addPatientCommand; }
             set { _addPatientCommand = value; }
         }
-
 
         public int SSN {
             get { return _ssn; }
@@ -138,9 +141,10 @@ namespace M_WaldenHospital.ViewModel {
                 OnPropertyChanged("PatientViewModelCollection");
             }
         }
+        #endregion
 
 
-
+        #region Constructor
         public OprettePatientViewModel() {
             _ips = new InsurancePlanSystem();
             _patientCatalog = new PatientCatalog();
@@ -149,24 +153,21 @@ namespace M_WaldenHospital.ViewModel {
             _patientViewModelCollection = new ObservableCollection<PatientClass>();
 
         }
+        #endregion
 
 
-
-        private void CheckInsurance() {
-            InsurancePlan myIP = _ips.getMember(SSN);
-            Provider = myIP.Provider;
-            ValidUntil = myIP.Validtil;
+        #region Methods
+        private void CheckInsurance() { //Responsible for validating insurance
+            InsurancePlan myIP = _ips.getMember(SSN);   //Sends SSN to the insurer and assigns the insurance it returns to myIP
+            Provider = myIP.Provider;                   //Updates the Provider field for the view layer
+            ValidUntil = myIP.Validtil;                 //Updates the ValidUntil field for the view layer
         }
-
-
-
-        public void CreatePatient() {
-            PatientClass newPatient = _patientCatalog.CreatePatient(SSN, PName, PAddress, PAge, RName, RTlf, Relationship, CID, ValidTo);
-            PatientViewModelCollection.Add(newPatient);
+        
+        public void CreatePatient() { //Responsible for patient creation
+            PatientClass newPatient = _patientCatalog.CreatePatient                     //Sends data to the PatientCatalog in the model
+                (SSN, PName, PAddress, PAge, RName, RTlf, Relationship, CID, ValidTo);  //layer and assigns the Patient it returns
+            PatientViewModelCollection.Add(newPatient); //Adds the patient to ObservableCollection so it's useable in the view layer
         }
-
-
-
-
+        #endregion
     }
 }

@@ -9,7 +9,6 @@ namespace M_WaldenHospital.Persistency
 {
      public class PatientCatalog
      {
-
         private List<Patient> _pc;
         private RelativeCatalog _relativeCatalog;
         private HospitalCardCatalog _hospitalCardCatalog;
@@ -20,22 +19,13 @@ namespace M_WaldenHospital.Persistency
             get { return _pc; }
         }
 
-
-
-
-        // need for constructor to construct objects
+        
         public PatientCatalog()
         {
            _pc = new List<Patient>();
             _relativeCatalog = new RelativeCatalog();
             _hospitalCardCatalog = new HospitalCardCatalog();
-
-
-
         }
-
-      
-
        
 
         public Patient CreatePatient(int ssn, string pName, string pAdress, int pAge, string rName, string rTlf, string relationship, int cID, int validTo)
@@ -52,7 +42,5 @@ namespace M_WaldenHospital.Persistency
 
             return _patient;
         }
-
-      
     }
 }
