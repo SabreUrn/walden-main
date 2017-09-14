@@ -108,7 +108,7 @@
 
             <StackPanel HorizontalAlignment="Left" Width="396" Grid.Column="1" Margin="10.4,30,-32.8,9.8" Grid.RowSpan="2">
                 <TextBlock x:Name="textBlock222" TextWrapping="Wrap" Text="List of Patients"/>
-                <ListView x:Name="listView" Height="175" ItemsSource="{Binding LIST}" Margin="9,0,33,0">
+                <ListView x:Name="listView" Height="175" ItemsSource="{Binding PatientViewModelCollection}" Margin="9,0,33,0">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <StackPanel   Orientation="Vertical"  Margin="0,5,5,5">

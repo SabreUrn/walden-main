@@ -3,9 +3,11 @@ using M_WaldenHospital.InsurancePlanService;
 using M_WaldenHospital.Persistency;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using PatientClass = M_WaldenHospital.Model.Patient;
 
 namespace M_WaldenHospital.ViewModel {
     public class OprettePatientViewModel : ViewModelBase {
@@ -23,7 +25,7 @@ namespace M_WaldenHospital.ViewModel {
         private string _rName;
         private string _rTlf;
         private string _relationship;
-        //private List<Patient> patients = new List<Patient>();
+        private ObservableCollection<PatientClass> _patientViewModelCollection;
 
         private RelayCommand _checkInsurancePatientCommand;
         private RelayCommand _addPatientCommand;
@@ -129,14 +131,25 @@ namespace M_WaldenHospital.ViewModel {
             }
         }
 
+        public ObservableCollection<PatientClass> PatientViewModelCollection {
+            get { return _patientViewModelCollection; }
+            set {
+                _patientViewModelCollection = value;
+                OnPropertyChanged("PatientViewModelCollection");
+            }
+        }
+
+
 
         public OprettePatientViewModel() {
             _ips = new InsurancePlanSystem();
             _patientCatalog = new PatientCatalog();
             _checkInsurancePatientCommand = new RelayCommand(CheckInsurance);
             _addPatientCommand = new RelayCommand(CreatePatient);
+            _patientViewModelCollection = new ObservableCollection<PatientClass>();
 
         }
+
 
 
         private void CheckInsurance() {
@@ -148,7 +161,8 @@ namespace M_WaldenHospital.ViewModel {
 
 
         public void CreatePatient() {
-            _patientCatalog.CreatePatient(SSN, PName, PAddress, PAge, RName, RTlf, Relationship, CID, ValidTo);
+            PatientClass newPatient = _patientCatalog.CreatePatient(SSN, PName, PAddress, PAge, RName, RTlf, Relationship, CID, ValidTo);
+            PatientViewModelCollection.Add(newPatient);
         }
 
 

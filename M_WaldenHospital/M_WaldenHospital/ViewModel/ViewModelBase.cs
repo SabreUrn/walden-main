@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel;
 
+using System.Collections.ObjectModel;
 namespace M_WaldenHospital.ViewModel
 {
     public class ViewModelBase : INotifyPropertyChanged

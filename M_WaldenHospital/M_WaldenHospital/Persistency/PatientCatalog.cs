@@ -38,7 +38,7 @@ namespace M_WaldenHospital.Persistency
 
        
 
-        public void CreatePatient(int ssn, string pName, string pAdress, int pAge, string rName, string rTlf, string relationship, int cID, int validTo)
+        public Patient CreatePatient(int ssn, string pName, string pAdress, int pAge, string rName, string rTlf, string relationship, int cID, int validTo)
         {
             HospitalCard pHospitalCard = _hospitalCardCatalog.CreateCard(cID, validTo); //New hospital card gets created by calling CreateCard,
                                                                                         //which also runs all the other code in that method.
@@ -49,6 +49,8 @@ namespace M_WaldenHospital.Persistency
             }                                                                           //the CreateRelativ method in the _relativeCatalog
             _patient = new Patient(ssn, pName, pAdress, pAge, pRelative, pHospitalCard);//New patient gets created using parameters and new instances
            _pc.Add(_patient); //Patient gets added to catalog
+
+            return _patient;
         }
 
       
